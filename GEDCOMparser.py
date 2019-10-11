@@ -64,6 +64,8 @@ fam = []
 for fam in fams:
     if fam[2] != []:
         for ch in fam[2]:
-            prolog.write("child('" + str(getnamebyid(ch)) + "', '" + str(getnamebyid(fam[0])) + "').\n")
-            prolog.write("child('" + str(getnamebyid(ch)) + "', '" + str(getnamebyid(fam[1])) + "').\n")
+            if fam[0] != '':
+                prolog.write("child('" + str(getnamebyid(ch)) + "', '" + str(getnamebyid(fam[0])) + "').\n")
+            if fam[1] != '':
+                prolog.write("child('" + str(getnamebyid(ch)) + "', '" + str(getnamebyid(fam[1])) + "').\n")
 prolog.close()
